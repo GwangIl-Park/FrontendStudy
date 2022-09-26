@@ -1,0 +1,51 @@
+<html>
+  <body>
+    <div id="root"></div>
+  </body>
+  <script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- Your custom script here -->
+  <script type="text/babel">
+    /*let count = 0;
+    const root = document.getElementById('root');
+    const h3 = React.createElement('h3', {}, `click count : ${count}`);
+    function renderContainer() {
+      const h3 = React.createElement('h3', {}, `click count : ${count}`);
+      const container = React.createElement('div', {}, [h3, button]);
+      ReactDOM.render(container, root);
+    }
+    const button = React.createElement(
+      'button',
+      {
+        onClick: () => {
+          count++;
+          renderContainer();
+        },
+      },
+      'click me'
+    );
+    renderContainer();*/
+    let count = 0;
+    const root = document.getElementById('root');
+    function renderContainer() {
+      count++;
+      const Title = () => {
+        return <h3>click count : {count}</h3>;
+      };
+      const Container = () => {
+        return (
+          <div>
+            <Title />
+            <Button />
+          </div>
+        );
+      };
+      ReactDOM.render(<Container />, root);
+    }
+    const Button = () => {
+      return <button onClick={() => renderContainer()}>button</button>;
+    };
+    renderContainer();
+  </script>
+</html>

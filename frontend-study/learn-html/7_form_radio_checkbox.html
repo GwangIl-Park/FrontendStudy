@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="">
+      <fieldset>
+        <legend>좋아하는 색상을 모두 선택</legend>
+        <ul>
+          <li>
+            <label for="red">빨강</label>
+            <input type="checkbox" id="red" value="red" />
+          </li>
+          <li>
+            <label for="orange">주황</label>
+            <input type="checkbox" id="orange" value="orange" />
+          </li>
+          <li>
+            <label for="yellow">노랑</label>
+            <input type="checkbox" id="yellow" value="yellow" />
+          </li>
+          <li>
+            <label for="green">초록</label>
+            <input type="checkbox" id="green" value="green" />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>배송방법</legend>
+        <ul>
+          <li>
+            <label for="free">무료</label>
+            <input type="radio" name="delivery" id="free" value="free" />
+          </li>
+          <li>
+            <label for="pay">유료</label>
+            <input type="radio" name="delivery" id="pay" value="pay" />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>자기소개서</legend>
+        <textarea name="" id="" cols="15" rows="5">하이</textarea>
+      </fieldset>
+      <fieldset>
+        <legend>주문상품선택</legend>
+        <ul>
+          <li>
+            <select name="goods" id="goods" multiple>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <label for="ice-cream-choice">맛을 선택하세요</label>
+        <input
+          list="ice-cream-flavors"
+          id="ice-cream-choice"
+          name="ice-cream-choice"
+        />
+        <datalist id="ice-cream-flavors">
+          <option value="cho"></option>
+          <option value="str"></option>
+        </datalist>
+      </fieldset>
+    </form>
+  </body>
+</html>

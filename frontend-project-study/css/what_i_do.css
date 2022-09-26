@@ -1,0 +1,46 @@
+/*임시*/
+section {
+  background-color: #f8f8f8;
+}
+
+section .do-me::after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+section .do-me .do-inner {
+  width: 30%;
+  padding: 2rem;
+  float: left;
+  background-color: #fff;
+  margin-right: 5%;
+  cursor: pointer;
+}
+
+section .do-me .do-inner:last-child {
+  margin-right: 0;
+}
+/*i 컴포넌트는 image와 다르게 폰트처럼 취급되기 때문에 조절이 가능*/
+section .do-me .do-inner .icon i {
+  font-size: 2.5rem;
+  color: #ff6a6a;
+}
+
+section .do-me .do-inner h3 {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+section .do-me .do-inner p {
+  font-size: 1.15rem;
+}
+
+section .do-me .do-inner:hover {
+  background-color: lightcoral;
+  color: white;
+}
+
+section .do-me .do-inner:hover .icon i {
+  color: white;
+}

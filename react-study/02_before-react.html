@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <button id="btn">Click Me</button>
+    <div>Click Count : <span>0</span></div>
+  </body>
+  <script>
+    const button = document.getElementById('btn');
+    const countText = document.querySelector('span');
+    function onClickButton() {
+      let count = parseInt(countText.innerText);
+      count += 1;
+      countText.innerText = count;
+    }
+    button.addEventListener('click', onClickButton);
+  </script>
+</html>

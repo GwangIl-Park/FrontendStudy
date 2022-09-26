@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border: lpx solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid black;
+        padding: 12px;
+      }
+      .col1 {
+        width: 80px;
+      }
+      .col2 {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>table 기본</h1>
+    <table>
+      <caption>
+        테이블연습
+      </caption>
+      <tr>
+        <td>이름</td>
+        <td>취미</td>
+        <td>특기</td>
+      </tr>
+      <tr>
+        <td>홍길동</td>
+        <td>도술</td>
+        <td>축지법</td>
+      </tr>
+      <tr>
+        <td>짐코딩</td>
+        <td>헬스</td>
+        <td>코딩</td>
+      </tr>
+    </table>
+    <hr />
+    <h1>테이블 그룹</h1>
+    <table>
+      <caption>
+        학급 점수
+      </caption>
+      <colgroup>
+        <col class="col1" />
+        <col class="col2" />
+        <col class="col3" />
+        <col class="col4" />
+        <col class="col5" />
+        <col class="col6" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>반</th>
+          <th>이름</th>
+          <th>국어</th>
+          <th>영어</th>
+          <th>수학</th>
+          <th>코딩</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2">1</td>
+          <td>alice</td>
+          <td>90</td>
+          <td>100</td>
+          <td>80</td>
+          <td>70</td>
+        </tr>
+        <tr>
+          <td>bob</td>
+          <td>100</td>
+          <td>80</td>
+          <td>90</td>
+          <td>60</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">평균</td>
+          <td>95</td>
+          <td>100</td>
+          <td>85</td>
+          <td>65</td>
+        </tr>
+      </tfoot>
+    </table>
+  </body>
+</html>

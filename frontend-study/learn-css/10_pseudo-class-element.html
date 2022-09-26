@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  a{
+    font-size:30px;
+  }
+  a:link{
+    color:cyan;
+  }
+  a:visited{
+    color: red;
+  }
+  a:hover{
+    color: blue;
+    font-weight: 900px;
+  }
+  fieldset:hover{
+    background-color: lightgray;
+    box-shadow: 0 0 20px gray;
+  }
+  a:active{
+    color: yellow;
+  }
+  input:focus{
+    outline: none;
+    border:3px solid red;
+    box-shadow: 0 0 20px rgb(255,177,177);
+  }
+  .field{
+    margin-bottom: 10px;
+  }
+  li:nth-child(1){
+    background-color: yellow;
+  }
+  li:nth-child(even){
+    background-color: green;
+  }
+  li:not(.target){
+    font-size: 30px;
+  }
+  /*가상 요소*/
+  .required::before{
+    content:'*';
+    margin-right:2px;
+    color:red;
+    font-size: 10px;
+  }
+  [data-tooltip]{
+    position: relative;
+  }
+  [data-tooltip]:hover::after{
+    content:attr(data-tooltip);
+    position:absolute;
+    top:0px;
+    left:50px;
+    background-color: black;
+    color: white;
+    width: 200px;
+  }
+  .letter::first-letter{
+    font-size: 60px;
+    color: blue;
+  }
+  .line::first-line{
+    font-size: 20px;
+    background-color: yellow;
+  }
+  p::selection{
+    background-color: red;
+    color: wheat;
+  }
+</style>
+</head>
+<body>
+  <fieldset>
+    <legend>pseudo class</legend>
+    <div>
+      <a href="https://naver.com">네이버</a>
+      <a href="https://kakao.com">카카오</a>
+    </div>
+  </fieldset>
+  <fieldset>
+    <legend>focus, before, after</legend>
+    <div class="field">
+      <label class="required" for="name">이름</label>
+      <input type="text" id="name">
+    </div>
+    <div class="field">
+      <label for="age">나이</label>
+      <input type="text" id="age">
+    </div>
+    <button data-tooltip="클릭하여 정보를 보내세요">보내기</button>
+  </fieldset>
+  <fieldset>
+    <legend>nth-child, not</legend>
+    <ul>
+      <li>1content</li>
+      <li>2content</li>
+      <li>3content</li>
+      <li class="target">4content</li>
+      <li>5content</li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>first-letter,first-line,section</legend>
+    <div>
+      <p class="letter">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime quos deserunt veritatis molestiae nesciunt, obcaecati voluptatem adipisci autem. Impedit repellendus delectus numquam totam debitis beatae illo id commodi perspiciatis magni?
+      </p>
+      <p class="line">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis odit labore aliquid error harum voluptatem qui quas modi ad doloremque laudantium eligendi numquam, amet, consectetur eos fuga minima nesciunt velit.
+      </p>
+    </div>
+  </fieldset>
+</body>
+</html>

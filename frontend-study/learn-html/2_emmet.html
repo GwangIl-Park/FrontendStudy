@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 자식노드: div>ul>lu-->
+    <div>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+    <!-- 형제노드: div>ul+ol+div-->
+    <div>
+      <ul></ul>
+      <ol></ol>
+      <div></div>
+    </div>
+    <!-- 반복하기: div>ul>li*3-->
+    <div>
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <!-- 아이디: span#item(default : div)-->
+    <span id="item"></span>
+    <div id="item"></div>
+    <!-- 클래스 : span.item-->
+    <span class="item"></span>
+    <div class="item"></div>
+    <!-- 컨텐츠 p.container{hello}-->
+    <p class="container">hello</p>
+    <div class="container">hello</div>
+    <!-- 넘버링 p.container{item$}*5-->
+    <p class="container">item1</p>
+    <p class="container">item2</p>
+    <p class="container">item3</p>
+    <p class="container">item4</p>
+    <p class="container">item5</p>
+  </body>
+</html>

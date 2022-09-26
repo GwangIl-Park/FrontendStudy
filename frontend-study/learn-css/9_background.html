@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        background-color: red;
+        width: 120px;
+        height: 120px;
+      }
+      .image {
+        background-image: url('../assets/test_img.jpg');
+        background-repeat: repeat;
+        background-position-x: center;
+        background-position-y: center;
+        width: 200px;
+        height: 300px;
+        display: inline-block;
+        overflow-y: scroll;
+      }
+      .attachment-scroll {
+        background-attachment: scroll;
+      }
+      .attachment-fixed {
+        background-attachment: fixed;
+      }
+      .attachment-local {
+        background-attachment: local;
+      }
+      .background-size {
+        width: 300px;
+        height: 100px;
+        background-image: url('../assets/test_img2.jpg');
+        background-repeat: no-repeat;
+        /*background-size: contain;*/
+        background-size: cover;
+        background-position: center;
+        border: 1px solid black;
+      }
+      .linear-gradient {
+        width: 500px;
+        height: 200px;
+        border: 1px solid red;
+        background: linear-gradient(45deg, red 50%, blue 60%, yellow);
+      }
+      .radial-gradient {
+        width: 500px;
+        height: 200px;
+        border: 1px solid red;
+        background: radial-gradient(circle, white, red, blue);
+      }
+    </style>
+  </head>
+  <body>
+    <h3>background-color</h3>
+    <div class="red"></div>
+    <h3>background-image</h3>
+    <div class="image"></div>
+    <div class="image attachment-scroll">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, ipsa.
+      Suscipit incidunt minima reprehenderit odio quibusdam fuga inventore omnis
+      facilis eveniet officia culpa corrupti, delectus, doloremque eum dolores
+      alias dolor. Nemo quas, voluptatibus obcaecati beatae placeat error
+      consectetur accusamus iusto numquam voluptate in odit impedit officiis,
+      laborum sequi cum necessitatibus eveniet pariatur nesciunt neque magnam
+      voluptatem quaerat. Fugit, temporibus qui? Minus, porro ipsum mollitia
+      aliquam consectetur vero commodi eum nihil iure nisi dicta ex, quaerat
+      molestiae tempora autem ad officia reprehenderit eos, nulla aliquid
+      consequuntur ratione laborum! Pariatur, eos dicta. Quisquam voluptatum
+      nesciunt libero voluptas inventore est provident, repellendus explicabo
+      quos, obcaecati facere minima, labore dolorem fugiat in asperiores nemo
+      odit quam nihil. Ad harum rem amet minima reprehenderit laudantium? Ullam,
+      itaque. Eum reprehenderit autem quod numquam labore ut aperiam molestiae,
+      officia dolor quaerat quis soluta, voluptatem libero voluptas facilis.
+      Aliquid dolore officiis vel odio natus quisquam enim ad impedit. Maxime
+      iste repudiandae molestiae sit, perferendis quam cumque nam quidem
+      voluptas nisi dicta in atque explicabo aut, totam laborum perspiciatis
+      reiciendis, asperiores incidunt? Mollitia nobis dolorum odio, tenetur
+      pariatur itaque. Quis et saepe possimus odit explicabo magnam voluptatum.
+      Doloremque dolorem soluta voluptatem laboriosam! Eaque velit optio debitis
+      exercitationem a, beatae possimus distinctio asperiores ullam, nisi ipsum
+      minus aspernatur nobis ea? Dolorum sint maxime ipsam, officia ratione
+      voluptas quis exercitationem nam aspernatur omnis ipsum, expedita iure.
+      Autem perspiciatis, minus unde mollitia earum provident aliquid
+      consectetur nesciunt laborum architecto voluptas accusamus voluptates.
+    </div>
+    <div class="image attachment-fixed">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, ipsa.
+      Suscipit incidunt minima reprehenderit odio quibusdam fuga inventore omnis
+      facilis eveniet officia culpa corrupti, delectus, doloremque eum dolores
+      alias dolor. Nemo quas, voluptatibus obcaecati beatae placeat error
+      consectetur accusamus iusto numquam voluptate in odit impedit officiis,
+      laborum sequi cum necessitatibus eveniet pariatur nesciunt neque magnam
+      voluptatem quaerat. Fugit, temporibus qui? Minus, porro ipsum mollitia
+      aliquam consectetur vero commodi eum nihil iure nisi dicta ex, quaerat
+      molestiae tempora autem ad officia reprehenderit eos, nulla aliquid
+      consequuntur ratione laborum! Pariatur, eos dicta. Quisquam voluptatum
+      nesciunt libero voluptas inventore est provident, repellendus explicabo
+      quos, obcaecati facere minima, labore dolorem fugiat in asperiores nemo
+      odit quam nihil. Ad harum rem amet minima reprehenderit laudantium? Ullam,
+      itaque. Eum reprehenderit autem quod numquam labore ut aperiam molestiae,
+      officia dolor quaerat quis soluta, voluptatem libero voluptas facilis.
+      Aliquid dolore officiis vel odio natus quisquam enim ad impedit. Maxime
+      iste repudiandae molestiae sit, perferendis quam cumque nam quidem
+      voluptas nisi dicta in atque explicabo aut, totam laborum perspiciatis
+      reiciendis, asperiores incidunt? Mollitia nobis dolorum odio, tenetur
+      pariatur itaque. Quis et saepe possimus odit explicabo magnam voluptatum.
+      Doloremque dolorem soluta voluptatem laboriosam! Eaque velit optio debitis
+      exercitationem a, beatae possimus distinctio asperiores ullam, nisi ipsum
+      minus aspernatur nobis ea? Dolorum sint maxime ipsam, officia ratione
+      voluptas quis exercitationem nam aspernatur omnis ipsum, expedita iure.
+      Autem perspiciatis, minus unde mollitia earum provident aliquid
+      consectetur nesciunt laborum architecto voluptas accusamus voluptates.
+    </div>
+    <div class="image attachment-local">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, ipsa.
+      Suscipit incidunt minima reprehenderit odio quibusdam fuga inventore omnis
+      facilis eveniet officia culpa corrupti, delectus, doloremque eum dolores
+      alias dolor. Nemo quas, voluptatibus obcaecati beatae placeat error
+      consectetur accusamus iusto numquam voluptate in odit impedit officiis,
+      laborum sequi cum necessitatibus eveniet pariatur nesciunt neque magnam
+      voluptatem quaerat. Fugit, temporibus qui? Minus, porro ipsum mollitia
+      aliquam consectetur vero commodi eum nihil iure nisi dicta ex, quaerat
+      molestiae tempora autem ad officia reprehenderit eos, nulla aliquid
+      consequuntur ratione laborum! Pariatur, eos dicta. Quisquam voluptatum
+      nesciunt libero voluptas inventore est provident, repellendus explicabo
+      quos, obcaecati facere minima, labore dolorem fugiat in asperiores nemo
+      odit quam nihil. Ad harum rem amet minima reprehenderit laudantium? Ullam,
+      itaque. Eum reprehenderit autem quod numquam labore ut aperiam molestiae,
+      officia dolor quaerat quis soluta, voluptatem libero voluptas facilis.
+      Aliquid dolore officiis vel odio natus quisquam enim ad impedit. Maxime
+      iste repudiandae molestiae sit, perferendis quam cumque nam quidem
+      voluptas nisi dicta in atque explicabo aut, totam laborum perspiciatis
+      reiciendis, asperiores incidunt? Mollitia nobis dolorum odio, tenetur
+      pariatur itaque. Quis et saepe possimus odit explicabo magnam voluptatum.
+      Doloremque dolorem soluta voluptatem laboriosam! Eaque velit optio debitis
+      exercitationem a, beatae possimus distinctio asperiores ullam, nisi ipsum
+      minus aspernatur nobis ea? Dolorum sint maxime ipsam, officia ratione
+      voluptas quis exercitationem nam aspernatur omnis ipsum, expedita iure.
+      Autem perspiciatis, minus unde mollitia earum provident aliquid
+      consectetur nesciunt laborum architecto voluptas accusamus voluptates.
+    </div>
+    <h3>background-size</h3>
+    <div class="background-size"></div>
+    <h3>linear-gradient</h3>
+    <div class="linear-gradient"></div>
+    <h3>radial-gradient</h3>
+    <div class="radial-gradient"></div>
+    <div style="height: 1000px; width: 10px; background-color: red"></div>
+  </body>
+</html>
