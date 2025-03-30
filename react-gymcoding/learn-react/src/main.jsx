@@ -6,9 +6,11 @@ import AppCounter from './AppCounter.jsx'
 import App from './AppMovingDot.jsx'
 import AppTodo from './AppTodo.jsx'
 import AppTheme from './AppTheme.jsx'
+import AppEffect from './AppEffect.jsx'
+import AppRef from './AppRef.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AppTheme/>
+    <AppRef/>
   </StrictMode>,
 )
