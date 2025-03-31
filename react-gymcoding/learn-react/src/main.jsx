@@ -8,9 +8,10 @@ import AppTodo from './AppTodo.jsx'
 import AppTheme from './AppTheme.jsx'
 import AppEffect from './AppEffect.jsx'
 import AppRef from './AppRef.jsx'
+import AppMemo from './AppMemo.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AppRef/>
+    <AppMemo/>
   </StrictMode>,
 )
