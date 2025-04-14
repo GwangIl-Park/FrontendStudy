@@ -7,6 +7,7 @@ function App() {
 
   return (
     <>
+      <CssBaseline/>
         <Button variant='contained'>Button1</Button>
         <Button variant='outline'>Button2</Button>
         <Button variant='text'>Button3</Button>
