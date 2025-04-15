@@ -4,7 +4,7 @@ import SearchBar from '../components/SearchBar';
 import ViewToggle from '../components/ViewToggle';
 
 function Home() {
-  const contents = [
+  const [contents, setContents] = useState([
     {
       id: 1,
       name: '친환경 도시 농업 플랫폼',
@@ -29,7 +29,7 @@ function Home() {
       modifyDate: '2023-06-01',
       category: '여행',
     },
-  ];
+  ]);
 
   const [searchInput, setSearchInput] = useState('');
   const handleSearchInput = e => {
@@ -41,6 +41,10 @@ function Home() {
   );
 
   const [isGridView, setIsGridView] = useState(true);
+
+  const handleDeleteItem = id => {
+    setContents(contents.filter(content => content.id !== id));
+  };
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -55,6 +59,7 @@ function Home() {
         filterContents={filterContents}
         searchInput={searchInput}
         isGridView={isGridView}
+        onDeleteItem={handleDeleteItem}
       />
     </div>
   );
