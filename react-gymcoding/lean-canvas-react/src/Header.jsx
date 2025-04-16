@@ -7,6 +7,7 @@ import {
   FaTimes,
 } from 'react-icons/fa';
 import { useState } from 'react';
+import Button from './components/Button';
 function Header() {
   const navItems = [
     { id: 'home', label: 'Home', icon: <FaHome />, to: '/' },
@@ -46,9 +47,7 @@ function Header() {
         <button className="md:hidden" onClick={toggleMenu}>
           <FaBars />
         </button>
-        <button className="hidden md:block bg-blue-500 hover:bg-blue-600 text-white font-bold py-1.5 px-4">
-          짐코딩 강의
-        </button>
+        <Button className="hidden md:block">짐코딩 강의</Button>
       </div>
       {/*Mobile Menu*/}
       <aside

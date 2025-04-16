@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { AiOutlineClose, AiOutlineCheck } from 'react-icons/ai';
 
-const Note = ({ id, removeNoteList }) => {
+const Note = ({ id, content, removeNoteList, color: initialColor }) => {
   const colorOptions = [
     'bg-yellow-300',
     'bg-pink-300',
@@ -9,14 +9,15 @@ const Note = ({ id, removeNoteList }) => {
     'bg-green-300',
   ];
 
-  const randomIndex = Math.floor(Math.random() * colorOptions.length);
-
-  const [color, setColor] = useState(colorOptions[randomIndex]);
+  const [color, setColor] = useState(
+    initialColor
+      ? initialColor
+      : colorOptions[Math.floor(Math.random() * colorOptions.length)],
+  );
 
   const [isEditing, setIsEditing] = useState(false);
 
   const textAreaRef = useRef(null);
-  const [content, setContent] = useState('');
   useEffect(() => {
     if (textAreaRef.current) {
       textAreaRef.current.style.height =
@@ -54,7 +55,7 @@ const Note = ({ id, removeNoteList }) => {
       <textarea
         value={content}
         ref={textAreaRef}
-        onChange={e => setContent(e.target.value)}
+        onChange={}
         className={`w-full h-full bg-transparent resize-none border-none focus:outline-none text-gray-900 overflow-hidden`}
         aria-label="Edit Note"
         placeholder="메모를 작성하세요."
