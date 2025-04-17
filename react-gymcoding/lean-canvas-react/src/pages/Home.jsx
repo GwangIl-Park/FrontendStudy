@@ -5,35 +5,25 @@ import ViewToggle from '../components/ViewToggle';
 import { createCanvas, deleteCanvas, getCanvases } from '../api/canvases';
 import Loading from '../components/Loading';
 import Button from '../components/Button';
+import useApiRequest from '../hooks/useApiRequest';
 
 function Home() {
   const [contents, setContents] = useState([]);
   const [searchInput, setSearchInput] = useState();
   const [isGridView, setIsGridView] = useState(true);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [isLoadingCreate, setIsLoadingCreate] = useState(false);
 
-  async function fetchData(params) {
-    try {
-      setIsLoading(true);
-      setError(null);
-      await new Promise(resolver => setTimeout(resolver, 1000));
-      // const data = await fetch('http://localhost:8000/canvases')
-      //   .then(res => res.json())
-      //   .catch(console.error);
-      const response = await getCanvases(params);
-      const data = response.data;
-      setContents(data);
-    } catch (err) {
-      setError(err);
-    } finally {
-      setIsLoading(false);
-    }
-  }
+  const { isLoading, error, execute: fetchData } = useApiRequest(getCanvases);
+  const { isLoading: isLoadingCreate, execute: createNewCanvas } =
+    useApiRequest(createCanvas);
+
   useEffect(() => {
-    fetchData({ name_like: searchInput });
-  }, [searchInput]);
+    fetchData(
+      { name_like: searchInput },
+      {
+        onSuccess: response => setContents(response.data),
+      },
+    );
+  }, [searchInput, fetchData]);
 
   const handleSearchInput = e => {
     setSearchInput(e.target.value);
@@ -53,16 +43,25 @@ function Home() {
   };
 
   const handleCreateCanvas = async () => {
-    try {
-      setIsLoadingCreate(true);
-      await new Promise(resolver => setTimeout(resolver, 1000));
-      await createCanvas();
-      fetchData({ name_like: searchInput });
-    } catch (error) {
-      alert(error.message);
-    } finally {
-      setIsLoadingCreate(false);
-    }
+    // try {
+    //   setIsLoadingCreate(true);
+    //   await new Promise(resolver => setTimeout(resolver, 1000));
+    //   await createCanvas();
+    //   fetchData({ name_like: searchInput });
+    // } catch (error) {
+    //   alert(error.message);
+    // } finally {
+    //   setIsLoadingCreate(false);
+    // }
+    createNewCanvas(null, {
+      onSuccess: fetchData(
+        { name_like: searchInput },
+        {
+          onSuccess: response => setContents(response.data),
+        },
+      ),
+      onError: err => alert(err.message),
+    });
   };
 
   return (
