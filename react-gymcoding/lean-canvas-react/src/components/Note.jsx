@@ -1,7 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { AiOutlineClose, AiOutlineCheck } from 'react-icons/ai';
 
-const Note = ({ id, content, removeNoteList, color: initialColor }) => {
+const Note = ({
+  id,
+  content,
+  removeNoteList,
+  color: initialColor,
+  onUpdateNote,
+}) => {
+  const [localContent, setLocalContent] = useState(content);
   const colorOptions = [
     'bg-yellow-300',
     'bg-pink-300',
@@ -25,6 +32,10 @@ const Note = ({ id, content, removeNoteList, color: initialColor }) => {
     }
   }, [content]);
 
+  const handleContentChange = () => {
+    onUpdateNote(id, localContent, color);
+  };
+
   return (
     <div
       className={`p-4 ${color} relative max-h-[32rem] overflow-hidden`}
@@ -46,16 +57,20 @@ const Note = ({ id, content, removeNoteList, color: initialColor }) => {
           <button
             aria-label="Close Note"
             className="text-gray-700"
-            onClick={() => removeNoteList(id)}
+            onClick={e => {
+              e.stopPropagation();
+              removeNoteList(id);
+            }}
           >
             <AiOutlineClose size={20} />
           </button>
         )}
       </div>
       <textarea
-        value={content}
+        value={localContent}
         ref={textAreaRef}
-        onChange={}
+        onChange={e => setLocalContent(e.target.value)}
+        onBlur={handleContentChange}
         className={`w-full h-full bg-transparent resize-none border-none focus:outline-none text-gray-900 overflow-hidden`}
         aria-label="Edit Note"
         placeholder="메모를 작성하세요."

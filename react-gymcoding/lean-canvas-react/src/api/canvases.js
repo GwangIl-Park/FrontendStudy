@@ -34,3 +34,7 @@ export async function getCanvaseById(id) {
 export async function updateName(id, name) {
   await canvases.patch(`/${id}`, { name });
 }
+
+export async function updateCanvas(id, canvas) {
+  await canvases.put(`/${id}`, canvas);
+}
