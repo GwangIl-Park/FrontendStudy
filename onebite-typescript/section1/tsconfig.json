@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "ESNext", // 생성되는 JS 버전,
+    "module": "ESNext", //module 옵션
+    "outDir": "dist",
+    "strict": true, // 엄격한 타입 검사
+    "moduleDetection": "force", // export가 자동으로 추가 (전역 모듈 -> 개별 모듈)
+    "skipLibCheck": true,
+    "strictNullChecks": false // null 체크를 하도록 : let a:number = null
+  },
+  "ts-node": {
+    "esm":true
+  },
+  "include": ["src"] // 컴파일 범위
+}
